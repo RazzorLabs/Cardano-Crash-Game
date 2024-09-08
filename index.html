@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardano Crash Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+        }
+        #canvas {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #fff;
+            position: relative;
+        }
+        #controls {
+            margin-top: 20px;
+        }
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #carGif, #crashGif {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #carGif {
+            display: block;
+            bottom: 335px;
+        }
+        #crashGif {
+            display: none;
+            bottom: 10px;
+            width: 80%;
+            height: auto;
+        }
+        #winGif, #winGif2, #winGif3 {
+            display: none;
+        }
+        img {
+            display: block;
+        }
+        /* Position the Cardano logo in the top-right corner */
+        #cardanoLogo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;  /* Adjust width as needed */
+            height: auto;  /* Maintain aspect ratio */
+            z-index: 2;  /* Ensure it stays on top */
+        }
+	#cardanoLogo {
+            display: none;
+            bottom: 335px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cardano Crash Game</h1>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <img id="carGif" src="https://media.giphy.com/media/GTeQVBYmVnzu3BULuP/giphy.gif" width="80" height="60" />
+    <iframe id="crashGif" src="https://giphy.com/embed/2JRDs2HmH2NNXnITRe" frameborder="0" allowfullscreen></iframe>
+    <iframe id="winGif" src="https://giphy.com/embed/572Ca3vQAvbcYJW3kL" frameborder="0" allowfullscreen></iframe>
+    <iframe id="winGif2" src="https://giphy.com/embed/9jzFcheVK8Ksvt9d0y" frameborder="0" allowfullscreen></iframe>
+    <iframe id="winGif3" src="https://giphy.com/embed/ZqIZEKoOZSQz4WfQ7r" frameborder="0" allowfullscreen></iframe>
+
+    <!-- Cardano Logo positioned in the top-right corner -->
+    <img id="cardanoLogo" src="cardano_logo.png" alt="Cardano Logo">
+
+    <div id="controls">
+        <input type="number" id="bet" placeholder="Enter your bet" step="0.01" />
+        <button id="startButton">Start Game</button>
+        <button id="cashoutButton" disabled>Cash Out</button>
+    </div>
+    <div id="message"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>
